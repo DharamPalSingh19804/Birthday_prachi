@@ -1,5 +1,6 @@
 // Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
+//document.addEventListener('DOMContentLoaded', function()
+{
 
     // ===== LOADING SCREEN =====
     const loadingScreen = document.getElementById('loading-screen');
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 loadingScreen.classList.add('hidden');
             }
         }, 800);
-    });
+    };
 
     // ===== CONFIGURATION - CUSTOMIZE THESE! =====
     // CUSTOMIZE: Set the birthday date (format: 'Month Day, Year HH:MM:SS')
