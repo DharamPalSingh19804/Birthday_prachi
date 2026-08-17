@@ -1,5 +1,5 @@
 // Wait for DOM to be fully loaded
-//document.addEventListener('DOMContentLoaded', function()
+document.addEventListener('DOMContentLoaded', function()
 {
 
     // ===== LOADING SCREEN =====
