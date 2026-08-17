@@ -59,7 +59,27 @@ const reasons = [
         text: "Because you're simply amazing! Here's to another wonderful year! 🎉",
         emoji: "🎊",
         gif: "gif1.gif"
-    }
+    },
+        {
+        text: "Apka childish side! 🎉",
+        emoji: "🎊",
+        gif: "gif1.gif"
+    },
+        {
+        text: "Apke saath comfortable feel hota hai! 🎉",
+        emoji: "🎊",
+        gif: "gif1.gif"
+    },
+      {
+        text: "Apke saath baat karne ke baad mera mood bohot jyaada aacha ho jata hai! 🎉",
+        emoji: "🎊",
+        gif: "gif1.gif"
+    },
+          {
+        text: "Because you're simply you. ❤️",
+        emoji: "🎊",
+        gif: "gif1.gif"
+    },
     // Add more reasons as needed!
 ];
 
