@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ===== CONFIGURATION - CUSTOMIZE THESE! =====
     // CUSTOMIZE: Set the birthday date (format: 'Month Day, Year HH:MM:SS')
-    const birthdayDate = new Date('August 17, 2026 16:17:30').getTime();
+    const birthdayDate = new Date('August 17, 2026 16:19:00').getTime();
 
     // CUSTOMIZE: Change this greeting message
     const greetingText = "Prachi baby you are the most special person to me jaan and i  love you soo soo sooooo much 💖💖";
