@@ -1,6 +1,5 @@
 // Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function()
-{
+document.addEventListener('DOMContentLoaded', function() {
 
     // ===== LOADING SCREEN =====
     const loadingScreen = document.getElementById('loading-screen');
@@ -12,20 +11,20 @@ document.addEventListener('DOMContentLoaded', function()
                 loadingScreen.classList.add('hidden');
             }
         }, 800);
-    };
+    });
 
     // ===== CONFIGURATION - CUSTOMIZE THESE! =====
     // CUSTOMIZE: Set the birthday date (format: 'Month Day, Year HH:MM:SS')
     const birthdayDate = new Date('August 18, 2026 00:00:00').getTime();
 
     // CUSTOMIZE: Change this greeting message
-    const greetingText = "Prachi baby you are the most special person to me jaan and i  love you soo soo sooooo much 💖";
+    const greetingText = "Prachi baby you are the most special person to me jaan and i  love you soo soo sooooo much 💖💖";
 
     // CUSTOMIZE: Change floating elements if desired
     const floatingElements = ['💖', '✨', '🌸', '💫', '💕'];
 
     // ===== DOM ELEMENTS =====
-    //const countdownSection = document.getElementById('countdown-section');
+    const countdownSection = document.getElementById('countdown-section');
     const birthdayContent = document.getElementById('birthday-content');
     const cursor = document.querySelector('.cursor');
     const bgMusic = document.getElementById('bgMusic');
@@ -165,5 +164,40 @@ document.addEventListener('DOMContentLoaded', function()
     }
 
     // ===== COUNTDOWN =====
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = birthdayDate - now;
 
+        if (distance <= 0) {
+            // Birthday has arrived!
+            if (countdownSection) countdownSection.style.display = 'none';
+            if (birthdayContent) birthdayContent.style.display = 'block';
+
+            // Only initialize animations once
+            if (!birthdayAnimationsStarted) {
+                birthdayAnimationsStarted = true;
+                initBirthdayAnimations();
+            }
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+
+        if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+        if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+        if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+        if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+    }
+
+    // Run countdown immediately and then every second
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
 });
